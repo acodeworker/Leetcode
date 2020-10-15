@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BDC6291D2524952C007E47B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDC6291C2524952C007E47B8 /* main.m */; };
-		BDC6292625249549007E47B8 /* Person.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDC6292425249549007E47B8 /* Person.cpp */; };
+		BDCE309C2535B00F007AED47 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDCE309B2535B00F007AED47 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BDC629172524952C007E47B8 /* CopyFiles */ = {
+		BDCE30962535B00F007AED47 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,14 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BDC629192524952C007E47B8 /* LeetCODE */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCODE; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDC6291C2524952C007E47B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BDC6292425249549007E47B8 /* Person.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Person.cpp; sourceTree = "<group>"; };
-		BDC6292525249549007E47B8 /* Person.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Person.hpp; sourceTree = "<group>"; };
+		BDCE30982535B00F007AED47 /* LeeTCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeeTCode; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDCE309B2535B00F007AED47 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BDC629162524952C007E47B8 /* Frameworks */ = {
+		BDCE30952535B00F007AED47 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,66 +38,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BDC629102524952C007E47B8 = {
+		BDCE308F2535B00F007AED47 = {
 			isa = PBXGroup;
 			children = (
-				BDC6291B2524952C007E47B8 /* LeetCODE */,
-				BDC6291A2524952C007E47B8 /* Products */,
+				BDCE309A2535B00F007AED47 /* LeeTCode */,
+				BDCE30992535B00F007AED47 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BDC6291A2524952C007E47B8 /* Products */ = {
+		BDCE30992535B00F007AED47 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BDC629192524952C007E47B8 /* LeetCODE */,
+				BDCE30982535B00F007AED47 /* LeeTCode */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BDC6291B2524952C007E47B8 /* LeetCODE */ = {
+		BDCE309A2535B00F007AED47 /* LeeTCode */ = {
 			isa = PBXGroup;
 			children = (
-				BDC6291C2524952C007E47B8 /* main.m */,
-				BDC6292425249549007E47B8 /* Person.cpp */,
-				BDC6292525249549007E47B8 /* Person.hpp */,
+				BDCE309B2535B00F007AED47 /* main.cpp */,
 			);
-			path = LeetCODE;
+			path = LeeTCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BDC629182524952C007E47B8 /* LeetCODE */ = {
+		BDCE30972535B00F007AED47 /* LeeTCode */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BDC629202524952C007E47B8 /* Build configuration list for PBXNativeTarget "LeetCODE" */;
+			buildConfigurationList = BDCE309F2535B00F007AED47 /* Build configuration list for PBXNativeTarget "LeeTCode" */;
 			buildPhases = (
-				BDC629152524952C007E47B8 /* Sources */,
-				BDC629162524952C007E47B8 /* Frameworks */,
-				BDC629172524952C007E47B8 /* CopyFiles */,
+				BDCE30942535B00F007AED47 /* Sources */,
+				BDCE30952535B00F007AED47 /* Frameworks */,
+				BDCE30962535B00F007AED47 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LeetCODE;
-			productName = LeetCODE;
-			productReference = BDC629192524952C007E47B8 /* LeetCODE */;
+			name = LeeTCode;
+			productName = LeeTCode;
+			productReference = BDCE30982535B00F007AED47 /* LeeTCode */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BDC629112524952C007E47B8 /* Project object */ = {
+		BDCE30902535B00F007AED47 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
-					BDC629182524952C007E47B8 = {
+					BDCE30972535B00F007AED47 = {
 						CreatedOnToolsVersion = 12.0;
 					};
 				};
 			};
-			buildConfigurationList = BDC629142524952C007E47B8 /* Build configuration list for PBXProject "LeetCODE" */;
+			buildConfigurationList = BDCE30932535B00F007AED47 /* Build configuration list for PBXProject "LeeTCode" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -108,30 +103,29 @@
 				en,
 				Base,
 			);
-			mainGroup = BDC629102524952C007E47B8;
-			productRefGroup = BDC6291A2524952C007E47B8 /* Products */;
+			mainGroup = BDCE308F2535B00F007AED47;
+			productRefGroup = BDCE30992535B00F007AED47 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BDC629182524952C007E47B8 /* LeetCODE */,
+				BDCE30972535B00F007AED47 /* LeeTCode */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BDC629152524952C007E47B8 /* Sources */ = {
+		BDCE30942535B00F007AED47 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDC6292625249549007E47B8 /* Person.cpp in Sources */,
-				BDC6291D2524952C007E47B8 /* main.m in Sources */,
+				BDCE309C2535B00F007AED47 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		BDC6291E2524952C007E47B8 /* Debug */ = {
+		BDCE309D2535B00F007AED47 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -190,7 +184,7 @@
 			};
 			name = Debug;
 		};
-		BDC6291F2524952C007E47B8 /* Release */ = {
+		BDCE309E2535B00F007AED47 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -242,7 +236,7 @@
 			};
 			name = Release;
 		};
-		BDC629212524952C007E47B8 /* Debug */ = {
+		BDCE30A02535B00F007AED47 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -252,7 +246,7 @@
 			};
 			name = Debug;
 		};
-		BDC629222524952C007E47B8 /* Release */ = {
+		BDCE30A12535B00F007AED47 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -265,25 +259,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BDC629142524952C007E47B8 /* Build configuration list for PBXProject "LeetCODE" */ = {
+		BDCE30932535B00F007AED47 /* Build configuration list for PBXProject "LeeTCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BDC6291E2524952C007E47B8 /* Debug */,
-				BDC6291F2524952C007E47B8 /* Release */,
+				BDCE309D2535B00F007AED47 /* Debug */,
+				BDCE309E2535B00F007AED47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BDC629202524952C007E47B8 /* Build configuration list for PBXNativeTarget "LeetCODE" */ = {
+		BDCE309F2535B00F007AED47 /* Build configuration list for PBXNativeTarget "LeeTCode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BDC629212524952C007E47B8 /* Debug */,
-				BDC629222524952C007E47B8 /* Release */,
+				BDCE30A02535B00F007AED47 /* Debug */,
+				BDCE30A12535B00F007AED47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BDC629112524952C007E47B8 /* Project object */;
+	rootObject = BDCE30902535B00F007AED47 /* Project object */;
 }
