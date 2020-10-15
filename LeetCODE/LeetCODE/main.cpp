@@ -3,13 +3,11 @@
 //  LeeTCode
 //fffff
 //  Created by jeremy on 2020/10/13.
-<<<<<<< HEAD
-//dev
-=======
-//master
->>>>>>> master
-
-#include <iostream>
+ //dev
+ //master
+ 
+ 
+ #include <iostream>
 using namespace std;
 const int MAX = 3;
 
