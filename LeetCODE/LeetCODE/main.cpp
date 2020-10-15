@@ -5,9 +5,8 @@
 //  Created by jeremy on 2020/10/13.
  //master
 
-
-
- #include <iostream>
+ 
+  #include <iostream>
  using namespace std;
 const int MAX = 3;
 
