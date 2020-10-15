@@ -6,7 +6,7 @@
  //master
 
 
- 
+//master
  #include <iostream>
  using namespace std;
 const int MAX = 3;
