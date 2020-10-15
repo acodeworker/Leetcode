@@ -3,7 +3,11 @@
 //  LeeTCode
 //
 //  Created by jeremy on 2020/10/13.
+<<<<<<< HEAD
 //dev
+=======
+//master
+>>>>>>> master
 
 #include <iostream>
 using namespace std;
