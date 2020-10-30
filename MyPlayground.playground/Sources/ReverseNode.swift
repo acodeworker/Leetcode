@@ -50,6 +50,19 @@
 //    }
 //    return trail!
 //}
+////方法2:递归的思想
+//func reverse(head:Node?) -> Node? {
+//    
+//    if (head == nil || head?.next == nil){
+//        return head
+//    }else{
+//        let p = reverse(head: head?.next)
+//        head?.next?.next = head
+//        head?.next = nil
+//        return p
+//    }
+//}
+//
 //
 ////测试代码
 //func initNode()->Node{
