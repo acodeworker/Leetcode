@@ -1,20 +1,31 @@
 
 import Foundation
 
+
 func subsets(_ nums: [Int]) -> [[Int]] {
-    var array = [[Int]]()
-    var zeroValue = [Int]()
-    array.append(zeroValue)
-    var temp = [[Int]]()
-    for element in nums {
-        temp = array
-        for eleArray in temp {
-            eleArray.append(element)
+    var res:[[Int]] = []
+    res.append([Int]())
+    for (_,item) in nums.enumerated() {
+        var temp:[[Int]] = []
+        for array in res {
+            temp.append(array + [item])
         }
-     }
-    
-    return array
+        res.append(contentsOf: temp)
     }
+    return res
+}
+ 
+//print("数组：\(subsets([0,1,2]))")
+
+var res = [Int](repeating: 9, count: 1)
+var copy = res
+
+res.append(5)
+print("copy\(copy)res\(res)")
+
+var someString:[String:Int] = [String:Int]()
+
+ 
 /**
  数组
  1.两数之和
