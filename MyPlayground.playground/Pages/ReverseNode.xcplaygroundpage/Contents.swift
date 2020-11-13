@@ -12,20 +12,23 @@ import Foundation
  需要准备的东西：
  200道算法题目，计算机基础知识。知识点和项目。
  
+ 
+ 
+ 11月11号
  */
 
-func subsets(_ nums: [Int]) -> [[Int]] {
-    var res:[[Int]] = []
-    res.append([Int]())
-    for (_,item) in nums.enumerated() {
-        var temp:[[Int]] = []
-        for array in res {
-            temp.append(array + [item])
-        }
-        res.append(contentsOf: temp)
-    }
-    return res
-}
+//func subsets(_ nums: [Int]) -> [[Int]] {
+//    var res:[[Int]] = []
+//    res.append([Int]())
+//    for (_,item) in nums.enumerated() {
+//        var temp:[[Int]] = []
+//        for array in res {
+//            temp.append(array + [item])
+//        }
+//        res.append(contentsOf: temp)
+//    }
+//    return res
+//}
  
 //print("数组：\(subsets([0,1,2]))")
 
@@ -35,28 +38,74 @@ func subsets(_ nums: [Int]) -> [[Int]] {
 //res.append(5)
 //print("copy\(copy)res\(res)")
 
-var someString:[String:Int] = [String:Int]()
-
- 
-//    * N个节点，输出所有的二进制数，每个节点可以为0和1.
-
-func binaryNum (_ track:inout [Int],source:[Int]) ->(){
-    if track.count == source.count {
-        print(track)
-        return
-    }
-    for (_,item) in source.enumerated() {
-        if track.contains(item) {
-            continue
-        }else{
-            track.append(item)
-        }
-        binaryNum(&track,source:source)
-        track.removeLast()
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public var val: Int
+ *     public var left: TreeNode?
+ *     public var right: TreeNode?
+ *     public init(_ val: Int) {
+ *         self.val = val
+ *         self.left = nil
+ *         self.right = nil
+ *     }
+ * }
+ */
+//class Solution {
+//    func levelOrder(_ root: TreeNode?) -> [[Int]] {
+//
+//    }
+//}
+public class TreeNode{
+    public var val:Int
+    public var left:TreeNode?
+    public var right:TreeNode?
+    public init(_ val:Int){
+        self.val = val
+        self.left = nil
+        self.right = nil
     }
 }
 
-var array = [Int]()
+func levelOrder(_ root: TreeNode?) -> [[Int]] {
+    if root == nil {  return [[Int]]()}
+    var queue = [TreeNode]()
+    queue.append(root!)
+    var res = [[Int]]()
+    res.append([root!.val])
+    while queue.count != 0 {
+        let size = queue.count
+        var cur = [Int]()
+        for _ in 0..<size {
+            let node = queue[0]
+            if (node.left != nil) {
+                queue.append(node.left!)
+                cur.append(node.left!.val)
+            }
+            if (node.right != nil) {
+                queue.append(node.right!)
+                cur.append(node.right!.val)
+            }
+            queue.removeFirst()
+            
+        }
+        if cur.count != 0{
+            res.append(cur)
+        }
+        
+    }
+    return res
+}
 
-binaryNum(&array, source: [1,2,3])
+var node1 = TreeNode.init(1)
+var node21 = TreeNode.init(2)
+var node22 = TreeNode.init(3)
+node1.left = node21
+node1.right = node22
+var node31 = TreeNode.init(4)
+var node32 = TreeNode.init(5)
 
+node21.left = node31
+node22.right = node32
+
+print(levelOrder(node1))
