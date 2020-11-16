@@ -37,75 +37,71 @@ import Foundation
 //
 //res.append(5)
 //print("copy\(copy)res\(res)")
+//[['1','3','4']]
 
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     public var val: Int
- *     public var left: TreeNode?
- *     public var right: TreeNode?
- *     public init(_ val: Int) {
- *         self.val = val
- *         self.left = nil
- *         self.right = nil
- *     }
- * }
- */
-//class Solution {
-//    func levelOrder(_ root: TreeNode?) -> [[Int]] {
-//
-//    }
-//}
-public class TreeNode{
-    public var val:Int
-    public var left:TreeNode?
-    public var right:TreeNode?
-    public init(_ val:Int){
-        self.val = val
-        self.left = nil
-        self.right = nil
+class UnionFind {
+    var parent:[Int]
+    var dic:[String:Int]
+    init(n:Int) {
+        parent = [Int]()
+        dic = [String:Int]()
+        for index in 0..<n {
+            parent.append(index)
+        }
     }
+    func find(x:Int) -> Int {
+        var p = x
+        while p != parent[p] {
+            parent[p] = parent[parent[p]]
+            p = parent[p]
+        }
+        return p
+    }
+    func union(p:Int,q:Int) -> (){
+        let roop = find(x: p)
+        let rooq = find(x: q)
+        if roop == rooq {
+            return
+        }
+        parent[roop] = rooq
+    }
+    
 }
-
-func levelOrder(_ root: TreeNode?) -> [[Int]] {
-    if root == nil {  return [[Int]]()}
-    var queue = [TreeNode]()
-    queue.append(root!)
-    var res = [[Int]]()
-    res.append([root!.val])
-    while queue.count != 0 {
-        let size = queue.count
-        var cur = [Int]()
-        for _ in 0..<size {
-            let node = queue[0]
-            if (node.left != nil) {
-                queue.append(node.left!)
-                cur.append(node.left!.val)
+ 
+func accountsMerge(_ accounts: [[String]]) -> [Int:[String]]{
+    let size = accounts.count
+    let union = UnionFind.init(n: size)
+    for i in 0..<size {
+        for j in 1..<size {
+            let email = accounts[i][j]
+            if union.dic[email] != nil {
+                union.union(p: union.dic[email]!, q: i)
+            }else{
+                union.dic[email] = i
             }
-            if (node.right != nil) {
-                queue.append(node.right!)
-                cur.append(node.right!.val)
+        }
+    }
+    var mergedAccount = [Int:[String]]()
+    for i in 0..<size {
+        let value = union.find(x:i)
+        print("----\(value)")
+        var element = mergedAccount[value]
+        if element  != nil {
+            for j in 1..<accounts[i].count {
+                if !element!.contains(accounts[i][j]) {
+                    element!.append(accounts[i][j])
+                }
             }
-            queue.removeFirst()
             
+        }else{
+            element = [String]()
+            for j in 0..<accounts[i].count {
+                element!.append(accounts[i][j])
+            }
+            mergedAccount[value] = element
         }
-        if cur.count != 0{
-            res.append(cur)
-        }
-        
     }
-    return res
+    return mergedAccount
 }
 
-var node1 = TreeNode.init(1)
-var node21 = TreeNode.init(2)
-var node22 = TreeNode.init(3)
-node1.left = node21
-node1.right = node22
-var node31 = TreeNode.init(4)
-var node32 = TreeNode.init(5)
-
-node21.left = node31
-node22.right = node32
-
-print(levelOrder(node1))
+print(accountsMerge([["John", "johnsmith@mail.com", "john00@mail.com"], ["John", "johnnybravo@mail.com"], ["John", "johnsmith@mail.com", "john_newyork@mail.com"], ["Mary", "mary@mail.com"]]))

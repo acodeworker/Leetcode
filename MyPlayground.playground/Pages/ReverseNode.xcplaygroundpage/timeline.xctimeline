@@ -3,12 +3,17 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/lumi/Desktop/code/leetcode/MyPlayground.playground/Pages/ReverseNode.xcplaygroundpage#CharacterRangeLen=1624&amp;CharacterRangeLoc=1049&amp;EndingColumnNumber=0&amp;EndingLineNumber=111&amp;StartingColumnNumber=0&amp;StartingLineNumber=40&amp;Timestamp=626925504.099129"
+         documentLocation = "file:///Users/lumi/Desktop/code/leetcode/MyPlayground.playground/Pages/ReverseNode.xcplaygroundpage#CharacterRangeLen=1241&amp;CharacterRangeLoc=1654&amp;EndingColumnNumber=0&amp;EndingLineNumber=107&amp;StartingColumnNumber=0&amp;StartingLineNumber=70&amp;Timestamp=627227523.196282"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "file:///Users/lumi/Desktop/code/leetcode/MyPlayground.playground/Pages/ReverseNode.xcplaygroundpage#CharacterRangeLen=1624&amp;CharacterRangeLoc=1049&amp;EndingColumnNumber=0&amp;EndingLineNumber=111&amp;StartingColumnNumber=0&amp;StartingLineNumber=40&amp;Timestamp=626925504.099877"
+         documentLocation = "file:///Users/lumi/Desktop/code/leetcode/MyPlayground.playground/Pages/ReverseNode.xcplaygroundpage#CharacterRangeLen=1241&amp;CharacterRangeLoc=1654&amp;EndingColumnNumber=0&amp;EndingLineNumber=107&amp;StartingColumnNumber=0&amp;StartingLineNumber=70&amp;Timestamp=627227523.196465"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/lumi/Desktop/code/leetcode/MyPlayground.playground/Pages/ReverseNode.xcplaygroundpage#CharacterRangeLen=192&amp;CharacterRangeLoc=2703&amp;EndingColumnNumber=0&amp;EndingLineNumber=107&amp;StartingColumnNumber=0&amp;StartingLineNumber=106&amp;Timestamp=627227523.196588"
          selectedRepresentationIndex = "0"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
