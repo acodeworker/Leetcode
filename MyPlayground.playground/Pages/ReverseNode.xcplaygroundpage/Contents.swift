@@ -11,6 +11,7 @@ import Foundation
  
  需要准备的东西：
  200道算法题目，计算机基础知识。知识点和项目。
+<<<<<<< HEAD
  
  
  
@@ -39,69 +40,29 @@ import Foundation
 //print("copy\(copy)res\(res)")
 //[['1','3','4']]
 
-class UnionFind {
-    var parent:[Int]
-    var dic:[String:Int]
-    init(n:Int) {
-        parent = [Int]()
-        dic = [String:Int]()
-        for index in 0..<n {
-            parent.append(index)
+func reor(_ S:String)->String{
+    var map = [Character:Int]()
+    for ch in S {
+//        let element = Character(ch)
+        if map[ch] != nil{
+          var num = map[ch]!
+            num += 1
+            map[ch] = num
+        }else{
+            map[ch] = 1
         }
     }
-    func find(x:Int) -> Int {
-        var p = x
-        while p != parent[p] {
-            parent[p] = parent[parent[p]]
-            p = parent[p]
+    var max = 0
+    var tempArray = [Character]()
+    for (key,value) in map {
+        if value > max {
+            max = value
         }
-        return p
+        let ele = Array(repeating: key, count: value)
+        tempArray += ele
     }
-    func union(p:Int,q:Int) -> (){
-        let roop = find(x: p)
-        let rooq = find(x: q)
-        if roop == rooq {
-            return
-        }
-        parent[roop] = rooq
-    }
+    if (max > S.count/2) {return ""}
+    
+    var res = Array(repeating: "0", count: S.count)
     
 }
- 
-func accountsMerge(_ accounts: [[String]]) -> [Int:[String]]{
-    let size = accounts.count
-    let union = UnionFind.init(n: size)
-    for i in 0..<size {
-        for j in 1..<size {
-            let email = accounts[i][j]
-            if union.dic[email] != nil {
-                union.union(p: union.dic[email]!, q: i)
-            }else{
-                union.dic[email] = i
-            }
-        }
-    }
-    var mergedAccount = [Int:[String]]()
-    for i in 0..<size {
-        let value = union.find(x:i)
-        print("----\(value)")
-        var element = mergedAccount[value]
-        if element  != nil {
-            for j in 1..<accounts[i].count {
-                if !element!.contains(accounts[i][j]) {
-                    element!.append(accounts[i][j])
-                }
-            }
-            
-        }else{
-            element = [String]()
-            for j in 0..<accounts[i].count {
-                element!.append(accounts[i][j])
-            }
-            mergedAccount[value] = element
-        }
-    }
-    return mergedAccount
-}
-
-print(accountsMerge([["John", "johnsmith@mail.com", "john00@mail.com"], ["John", "johnnybravo@mail.com"], ["John", "johnsmith@mail.com", "john_newyork@mail.com"], ["Mary", "mary@mail.com"]]))
