@@ -40,29 +40,67 @@ import Foundation
 //print("copy\(copy)res\(res)")
 //[['1','3','4']]
 
-func reor(_ S:String)->String{
-    var map = [Character:Int]()
-    for ch in S {
-//        let element = Character(ch)
-        if map[ch] != nil{
-          var num = map[ch]!
-            num += 1
-            map[ch] = num
-        }else{
-            map[ch] = 1
+//func reor(_ S:String)->String{
+//    var map = [Character:Int]()
+//    for ch in S {
+////        let element = Character(ch)
+//        if map[ch] != nil{
+//          var num = map[ch]!
+//            num += 1
+//            map[ch] = num
+//        }else{
+//            map[ch] = 1
+//        }
+//    }
+//    var max = 0
+//    var tempArray = [Character]()
+//    for (key,value) in map {
+//        if value > max {
+//            max = value
+//        }
+//        let ele = Array(repeating: key, count: value)
+//        tempArray += ele
+//    }
+//    if (max > S.count/2) {return ""}
+//
+//    var res = Array(repeating: "0", count: S.count)
+//
+//}
+
+
+func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
+    
+    var res = [Int]()
+    if nums.count == 0 {
+        return [-1,-1]
+    }
+    let count = nums.count
+    var l = 0
+    var r = count - 1
+    while l<r {
+        let m = (r+l+1)/2
+        if nums[m] > target {//[l  m-1]
+            r = m - 1
+        }else{//[m,r]
+            l = m
         }
     }
-    var max = 0
-    var tempArray = [Character]()
-    for (key,value) in map {
-        if value > max {
-            max = value
-        }
-        let ele = Array(repeating: key, count: value)
-        tempArray += ele
+    if nums[l] != target {
+        return [-1,-1]
     }
-    if (max > S.count/2) {return ""}
-    
-    var res = Array(repeating: "0", count: S.count)
-    
+    res.append(l)
+    r = count-1
+    while l<r {
+        let m = (r+l)/2
+        if nums[m] < target {//[m+1,r]
+            l = m + 1
+        }else{//[l,m]
+            r = m
+        }
+    }
+    if nums[r] != target {
+        return [-1,-1]
+    }
+    res.append(r)
+    return res
 }
