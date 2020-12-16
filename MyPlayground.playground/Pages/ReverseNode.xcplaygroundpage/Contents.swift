@@ -38,7 +38,10 @@ import Foundation
 //字符串操作
 //s.split(separator: " ")//得到一个
 
-
+//Optional?
+//let digit : String?
+//代表digit为nil https://www.cnblogs.com/qiutangfengmian/p/5594911.html
+//http://www.cocoachina.com/articles/26838
 func wordPattern(_ pattern: String, _ s: String) -> Bool {
    let keys = [Character](pattern)
    let values = s.split(separator: " ")
