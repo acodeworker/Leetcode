@@ -42,6 +42,12 @@ import Foundation
 //let digit : String?
 //代表digit为nil https://www.cnblogs.com/qiutangfengmian/p/5594911.html
 //http://www.cocoachina.com/articles/26838
+
+//数组初始化
+//https://www.jianshu.com/p/7b014cef542b
+//数组操作
+let
+
 func wordPattern(_ pattern: String, _ s: String) -> Bool {
    let keys = [Character](pattern)
    let values = s.split(separator: " ")
