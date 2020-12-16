@@ -18,89 +18,47 @@ import Foundation
  11月11号
  */
 
-//func subsets(_ nums: [Int]) -> [[Int]] {
-//    var res:[[Int]] = []
-//    res.append([Int]())
-//    for (_,item) in nums.enumerated() {
-//        var temp:[[Int]] = []
-//        for array in res {
-//            temp.append(array + [item])
-//        }
-//        res.append(contentsOf: temp)
-//    }
-//    return res
+//swift 基础语法
+//字符串的遍历
+//var love = "acdf232cc"
+//if love.contains("ff") {
+//    print("\(love)")
 //}
- 
-//print("数组：\(subsets([0,1,2]))")
-
-//var res = [Int](repeating: 9, count: 1)
-//var copy = res
 //
-//res.append(5)
-//print("copy\(copy)res\(res)")
-//[['1','3','4']]
-
-//func reor(_ S:String)->String{
-//    var map = [Character:Int]()
-//    for ch in S {
-////        let element = Character(ch)
-//        if map[ch] != nil{
-//          var num = map[ch]!
-//            num += 1
-//            map[ch] = num
-//        }else{
-//            map[ch] = 1
-//        }
-//    }
-//    var max = 0
-//    var tempArray = [Character]()
-//    for (key,value) in map {
-//        if value > max {
-//            max = value
-//        }
-//        let ele = Array(repeating: key, count: value)
-//        tempArray += ele
-//    }
-//    if (max > S.count/2) {return ""}
-//
-//    var res = Array(repeating: "0", count: S.count)
-//
+//for i in love.indices {
+//    print(love[i])
 //}
+//字典初始化
+//var map = [Character:Substring]()
+
+// guard使用
+//guard keys.count == values.count else {
+//    return false
+//}
+//字符串操作
+//s.split(separator: " ")//得到一个
 
 
-func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
-    
-    var res = [Int]()
-    if nums.count == 0 {
-        return [-1,-1]
+func wordPattern(_ pattern: String, _ s: String) -> Bool {
+   let keys = [Character](pattern)
+   let values = s.split(separator: " ")
+    guard keys.count == values.count else {
+        return false
     }
-    let count = nums.count
-    var l = 0
-    var r = count - 1
-    while l<r {
-        let m = (r+l+1)/2
-        if nums[m] > target {//[l  m-1]
-            r = m - 1
-        }else{//[m,r]
-            l = m
+    var map = [Character:Substring]()
+    for i in keys.indices {
+        if let value = map[keys[i]] {
+            if value != values[i] {
+                return false
+            }
+        }else{
+            if map.values.contains(values[i]) {
+                return false
+            }
+            map[keys[i]] = values[i]
         }
     }
-    if nums[l] != target {
-        return [-1,-1]
-    }
-    res.append(l)
-    r = count-1
-    while l<r {
-        let m = (r+l)/2
-        if nums[m] < target {//[m+1,r]
-            l = m + 1
-        }else{//[l,m]
-            r = m
-        }
-    }
-    if nums[r] != target {
-        return [-1,-1]
-    }
-    res.append(r)
-    return res
+    return true
 }
+
+ 
