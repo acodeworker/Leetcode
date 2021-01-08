@@ -1130,67 +1130,67 @@ play3(param: {() -> Void in
 
 })
 //简写
-play3 {
-  print("play3")
-}
-
-func play4(param:() -> String){
-  let val = param()
-  print(val + " - hello")
-}
-
-play4(param: {() -> String in
-   return "swift"
-})
-
-play4 {
-  return "swift"
-}
-
-func play5(param:(Int) -> String,param2:Int){
-  let val = param(param2)
-  print(val + " - swift")
-}
-
-play5(param: {(data:Int) -> String in
-  return String(data)
-}, param2: 4)
+//play3 {
+//  print("play3")
+//}
+//
+//func play4(param:() -> String){
+//  let val = param()
+//  print(val + " - hello")
+//}
+//
+//play4(param: {() -> String in
+//   return "swift"
+//})
+//
+//play4 {
+//  return "swift"
+//}
+//
+//func play5(param:(Int) -> String,param2:Int){
+//  let val = param(param2)
+//  print(val + " - swift")
+//}
+//
+//play5(param: {(data:Int) -> String in
+//  return String(data)
+//}, param2: 4)
 
 
 
 //错误处理
-enum TestError:String,Error{
-  case error1 = "错误1"
-  case error2 = "错误2"
-
-}
-
-func play7(param:Int) throws -> String{
-  if param < 10 {
-    throw TestError.error1
-  }
-  print("正常执行")
-  return "hello"
-}
-
-do {
-  try play7(param: 1)
-} catch TestError.error1 {
-  print("错误")
-}
-
-defer {
-  print("defer")
-}
+//enum TestError:String,Error{
+//  case error1 = "错误1"
+//  case error2 = "错误2"
+//
+//}
+//
+//func play7(param:Int) throws -> String{
+//  if param < 10 {
+//    throw TestError.error1
+//  }
+//  print("正常执行")
+//  return "hello"
+//}
+//
+//do {
+//  try play7(param: 1)
+//} catch TestError.error1 {
+//  print("错误")
+//}
+//
+//defer {
+//  print("defer")
+//}
 
 //泛型的类型限定
 
 //func play<T:String>(param:T){
 //  print("")
 //}
-//范型在协议中的运用
+//泛型在协议中的运用
 protocol Test{
-  associatedtype F
+  associatedtype F //泛型
   func play(param:F)
 }
 
@@ -1199,9 +1199,9 @@ class Person:Test{
     print(param)
   }
 }
-
-var p = Person.init()
-p.play(param: "swift")
+//
+//var p = Person.init()
+//p.play(param: "swift")
 
 //权限访问
 //private
@@ -1209,3 +1209,52 @@ p.play(param: "swift")
 //public
 //internal 默认的
 //open
+
+//var str1:String? = "hello"
+//var str2:String? = nil
+//
+//if let v1 = str1,let v2 = str2 {
+//  print("\(v1) + \(v2)")
+//}
+
+
+//mutating:需要修改struct中的属性时
+//struct Man {
+//  var arr:[Int]
+//  mutating func push(element:Int){
+//    arr.append(element)
+//  }
+//}
+//
+//var  m1 = Man(arr: [])
+//m1.push(element: 5)
+//print(m1.arr)
+
+ 
+//过滤nil
+let nums = [1,3,5,nil,6,nil,8]
+var result0 = nums.compactMap({(item) -> Int? in
+                    return item
+})
+print("result0: \(result0)" )
+
+//简便写法
+result0 = nums.compactMap{
+  return $0
+}
+
+//类型转换
+let result1 = nums.compactMap({(item) -> String? in
+  if let ele = item {
+    return "\(ele)"
+  }else{
+    return nil
+  }
+})
+print("result1: \(result1)" )
+
+//简便写法
+let result2 = nums.compactMap{ $0 != nil ? "\($0!)": nil
+}
+print("result2: \(result2)" )
+
