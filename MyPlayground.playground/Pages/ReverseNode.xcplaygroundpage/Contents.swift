@@ -20,37 +20,51 @@ import Foundation
 
 //swift 基础语法
 //字符串的遍历
-//var love = "acdf232cc"
+var love = "acdf232cc"
 //if love.contains("ff") {
 //    print("\(love)")
 //}
 //
+//字符串遍历1:
 //for i in love.indices {
-//    print(love[i])
+//  print(love[i])
 //}
-//字典初始化
-//var map = [Character:Substring]()
 
-// guard使用
-//guard keys.count == values.count else {
-//    return false
+//字符串遍历2:
+//for cha in love {
+//  print("string:\(cha)")
+//  print("string:"+String(cha))
 //}
-//字符串操作
-//s.split(separator: " ")//得到一个
+//.分割字符串
+//print("stringA:\("a b c".split(separator: " "))")//得到一个
 
 //Optional?
 //let digit : String?
 //代表digit为nil https://www.cnblogs.com/qiutangfengmian/p/5594911.html
 //http://www.cocoachina.com/articles/26838
 
+//数组
 //数组初始化
 //https://www.jianshu.com/p/7b014cef542b
 //数组操作
- 
 // let
 //typealias dog = String
 //var a: dog = "fff"
- 
+
+//数组的前n个元素，生成一个新的数组
+var array = [1,2,3]
+//var a1 = Array(array[1..<3])
+//print(a1)
+//https://www.jb51.cc/swift/323366.html
+
+//交换数组元素位置
+//array.swapAt(1, 2)
+
+//数组反转
+//array = array.reversed()
+//向数组中添加元素
+//myArray.insert(str1, atIndex:0)
+
 //var a = 10
 //
 //print("value = " + String(a))
@@ -89,6 +103,13 @@ import Foundation
 //print(name1)
 //print(name2)
 
+//字典初始化
+//var map = [Character:Substring]()
+
+// guard使用
+//guard keys.count == values.count else {
+//    return false
+//}
 //5.运算符
 //var a: String? = "af"
 //print(a ?? "fff")
@@ -164,7 +185,10 @@ import Foundation
 //}
 
 //
+var arry = ["1"]
+print(arry.reversed())
 var value = """
+
 adc
    dce
 """
@@ -1109,7 +1133,7 @@ play1(param1: "world") {(data) -> Void in
   print(data)
 }
 
-
+//完整写法
 func play2(param:(String) -> String){
   let val = param("swift")
   print(val)
@@ -1232,29 +1256,31 @@ class Person:Test{
 
  
 //过滤nil
-let nums = [1,3,5,nil,6,nil,8]
-var result0 = nums.compactMap({(item) -> Int? in
-                    return item
-})
-print("result0: \(result0)" )
+//let nums = [1,3,5,nil,6,nil,8]
+//var result0 = nums.compactMap({(item) -> Int? in
+//                    return item
+//})
+//print("result0: \(result0)" )
+//
+////简便写法
+//result0 = nums.compactMap{
+//  return $0
+//}
+//
+////类型转换
+//let result1 = nums.compactMap({(item) -> String? in
+//  if let ele = item {
+//    return "\(ele)"
+//  }else{
+//    return nil
+//  }
+//})
+//print("result1: \(result1)" )
+//
+////简便写法
+//let result2 = nums.compactMap{ $0 != nil ? "\($0!)": nil
+//}
+//print("result2: \(result2)" )
 
-//简便写法
-result0 = nums.compactMap{
-  return $0
-}
-
-//类型转换
-let result1 = nums.compactMap({(item) -> String? in
-  if let ele = item {
-    return "\(ele)"
-  }else{
-    return nil
-  }
-})
-print("result1: \(result1)" )
-
-//简便写法
-let result2 = nums.compactMap{ $0 != nil ? "\($0!)": nil
-}
-print("result2: \(result2)" )
-
+ 
+ 
