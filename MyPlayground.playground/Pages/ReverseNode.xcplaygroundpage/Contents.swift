@@ -14,7 +14,9 @@ import Foundation
 <<<<<<< HEAD
  
  
- 
+ 1.项目讲解 40%
+ 2.八股文，知识点 40%
+ 3.算法 20%
  11月11号
  */
 //1.第一次提交
@@ -32,6 +34,7 @@ var love = "acdf232cc"
 //for i in love.indices {
 //  print(love[i])
 //}
+//love[String.Index.in]
 
 //字符串遍历2:
 //for cha in love {
@@ -64,7 +67,8 @@ var array = [1,2,3]
 //array.swapAt(1, 2)
 
 //数组反转
-//array = array.reversed()
+array = array.reversed()
+//array.l
 //向数组中添加元素
 //myArray.insert(str1, atIndex:0)
 
@@ -1287,3 +1291,7 @@ class Person:Test{
 
  
  
+//
+//var i:Set<Int>
+
+//https://blog.csdn.net/weixin_37633696/article/details/77774964
