@@ -150,10 +150,12 @@ array = array.reversed()
 //repeat while = do while
 
 //string 类型基本操作
-//var str = "hello"
-//print(str.startIndex)
+var str = "hello"
+print(str.startIndex)
+//str.endIndex最后一位的后一位
 //print(str[str.startIndex])
-//print(str[str.index(before: str.endIndex)])
+print("分割线")
+print(str[str.index(before: str.endIndex)])
 
 // 从头开始的3个字符
 //print(String(str.prefix(3)))
@@ -269,12 +271,13 @@ adc
 //  print(item)
 //}
 
-//dictionary
+//字典
 //初始化
 //var a:Dictionary<String,String> = ["a":"A","b":"B"]
 //a = Dictionary()
 //var b:[Int:String] = [1:"a"]
 //取
+//Array.init(repeating: false, count: s.count)
 //print(a["c"] ?? "unknow")
 //set
 //a["d"] = "ff"
@@ -1290,8 +1293,13 @@ class Person:Test{
 //print("result2: \(result2)" )
 
  
- 
 //
 //var i:Set<Int>
-
 //https://blog.csdn.net/weixin_37633696/article/details/77774964
+func minNumber(_ nums: [Int]) -> String {
+        var strs = nums.map{ String($0) }
+        strs.sort(by: {$0 + $1 < $1 + $0})
+        return strs.joined(separator: "")
+}
+
+"".split(separator: ",")
